@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script type="text/javascript">
+
+    function javaCallJs(arg){
+         document.getElementById("content").innerHTML =
+             ("欢迎："+ arg );
+    }
+
+    function clickone(){
+        var result = myObj.getPwd("111");
+        document.getElementById("content_clickone").innerHTML =
+             ("one method result:" + result);
+        alert("one method result:" + result);
+    }
+
+    function clickthree() {
+        var result = prompt("js://demo?arg1=111","");
+        document.getElementById("content_clickthree").innerHTML =
+             ("three method result:" + result);
+        alert("three method result:" + result);
+    }
+
+
+
+    </script>
+
+    <style type="text/css">
+        input{
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="content"> 请在上方输入您的用户名</div>
+<div id="content_clickone"> </div>
+<div id="content_clickthree"> </div>
+
+<div>
+    <input type="button" value="点击Android被调用" onclick="window.Android.showToast('JS中传来的参数')"/>
+</div>
+<div>
+
+</div>
+<div class="inputstyle">
+    <input type="submit" name="invoke" id="one" onclick="clickone()">
+</div>
+<div class="inputstyle">
+    <input type="submit" name="invoke" id="three" onclick="clickthree()">
+</div>
+</body>
+</html>
